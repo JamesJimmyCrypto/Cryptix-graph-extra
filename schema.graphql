@@ -1,0 +1,41 @@
+type TokenAdded @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  price: BigInt! # uint256
+  creator: Bytes! # address
+  name: String! # string
+  symbol: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TokenRecieved @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  from: BigInt! # uint256
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TokenTransferred @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  to: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TokenWithdraw @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  to: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
